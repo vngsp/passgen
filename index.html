@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Fugaz+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/ogstyle.css">
+    <title>PassGen</title>
+</head>
+<body>
+    <header>
+        <h1>PassGen</h1>
+
+        <label class="switch">
+            <img src="assets/interface/change-icon-dark.png" class="btn-img" alt="">
+            <input type="checkbox" id="dark-mode-toggle">
+            <span class="slider"></span>
+          </label>
+    </header>
+
+    <div class="container">
+        <div class="container-title">
+            <h2>Generate your password</h2>
+        </div>
+        <form action="src/script.ts">
+            <h3>Pick your features</h3>
+            <div class="inputs-align">
+                <input type="number" id="qt-cr" min="1" max="18" placeholder="Enter your password length" title="Only number between 1 and 18 is allowed" class="txt-inputs" required>
+                <input type="text"  id="letters-cr" placeholder="Enter letters only" pattern="[A-Za-z]+" title="Only letters (A-Z, a-z) are allowed" class="txt-inputs">
+                <input type="text" id="spec-cr"  placeholder="Enter Special Characters (e.g., #, @, !)" pattern="[^A-Za-z0-9]+" title="Only special characters allowed" class="txt-inputs">
+                <input type="text" id="numbers-cr" placeholder="Enter numbers" class="txt-inputs">
+                <button class="gen-btn" type="button">Generate your password</button>
+                <button class="reset-btn" type="button">Reset</button>
+            </div>
+        </form>
+        <div class="pass-view"></div>
+    </div>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

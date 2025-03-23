@@ -1,0 +1,356 @@
+* {
+    box-sizing: border-box;
+    transition: all 0.5s ease;
+    font-family: "Arimo", sans-serif;
+}
+:root {
+    --title-border-color: #C71585;
+    --title-border-color-dark: #B8860B;
+}
+
+body.light-mode {
+    background-color: #fff;
+}
+body {
+    margin: 0;
+    background-color: #333;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+h1 {
+    color: var(--title-border-color-dark);
+    font-family: "Fugaz One", sans-serif;
+}
+
+.switch {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.btn-img {
+    width: 34px;
+    height: 34px;
+    transition: transform 0.3s ease;
+}
+.btn-img.rotate {
+    transform: rotate(180deg);
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 34px;
+    background-color: var(--title-border-color-dark);
+    border-radius: 24px;
+    transition: 0.3s;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    height: 32px;
+    width: 32px;
+    left: -1px;
+    bottom: 1px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+input:checked+.slider {
+    background-color: var(--title-border-color-dark);
+}
+
+input:checked+.slider:before {
+    transform: translateX(50px);
+}
+
+input:checked~.btn-img {
+    transform: rotate(180deg);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 29.5vw;
+    height: 42px;
+    text-align: center;
+    border: 1px solid var(--title-border-color-dark);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+h2 {
+    font-size: 1.1rem;
+    color: #eee;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--title-border-color-dark);
+    border-radius: 5px;
+    width: 29.5vw;
+    padding: 10px 0px 10px 0px;
+}
+h3 {
+    color: #eee;
+    margin: 0px 0px 10px 0px
+}
+.inputs-align {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 15px;
+}
+h3 {
+    font-size: 1rem;
+}
+.txt-inputs {
+    width: 250px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: #333;
+    color: #eee;
+    border: 1px solid var(--title-border-color-dark);
+}
+.light-mode .txt-inputs::placeholder {
+    color: #333;
+}
+body:not(.light-mode) .txt-inputs::placeholder {
+    color: #bbb;
+}
+
+.gen-btn {
+    align-self: center;
+    border: 1px solid var(--title-border-color-dark);
+    border-radius: 5px;
+    padding: 15px;
+    cursor: pointer;
+    background-color: #333;
+    color: #bbb;
+}
+.gen-btn:hover {
+    color: #eee;
+}
+.reset-btn {
+    align-self: center;
+    border: 1px solid var(--title-border-color-dark);
+    border-radius: 5px;
+    padding: 10px;
+    width: 100px;  
+    cursor: pointer;
+    background-color: #333;
+    color: #bbb;
+}
+.reset-btn:hover {
+    color: #eee;
+}
+
+.pass-view {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    width: 29.5vw;
+    height: 42px;
+    border: 1px solid var(--title-border-color-dark);
+    border-radius: 5px;
+    color: #eee;
+}
+
+@media(min-width: 320px) and (max-width: 374px) {
+    h1 {
+        font-size: 1.7rem;
+    }
+    .container-title {
+        width: 75vw;
+        height: 50px;
+    }
+    h2 {
+        font-size: 1rem;
+    }
+    h3 {
+        font-size: 0.9rem;
+    }
+    form {
+        width: 75vw;
+    }
+    .txt-inputs {
+        width: 70vw;
+    }
+    .txt-inputs::placeholder {
+        font-size: 0.7rem;
+    }
+    .gen-btn {
+        font-size: 0.8rem;
+    }
+    .reset-btn {
+        font-size: 0.8rem;
+    }
+    .pass-view {
+        width: 75vw;
+        font-size: 0.8rem;
+    }
+}
+
+@media(min-width: 375px) and (max-width: 424px) {
+    h1 {
+        font-size: 1.7rem;
+    }
+    .container-title {
+        width: 75vw;
+        height: 50px;
+    }
+    h2 {
+        font-size: 1rem;
+    }
+    h3 {
+        font-size: 0.9rem;
+    }
+    form {
+        width: 75vw;
+    }
+    .txt-inputs {
+        width: 70vw;
+    }
+    .txt-inputs::placeholder {
+        font-size: 0.75rem;
+    }
+    .gen-btn {
+        font-size: 0.8rem;
+    }
+    .reset-btn {
+        font-size: 0.8rem;
+    }
+    .pass-view {
+        width: 75vw;
+        font-size: 0.8rem;
+    }
+}
+
+@media(min-width: 425px) and (max-width: 767px) {
+    h1 {
+        font-size: 1.7rem;
+    }
+    .container-title {
+        width: 75vw;
+        height: 50px;
+    }
+    h2 {
+        font-size: 1.1rem;
+    }
+    h3 {
+        font-size: 1rem;
+    }
+    form {
+        width: 75vw;
+    }
+    .txt-inputs {
+        width: 70vw;
+    }
+    .txt-inputs::placeholder {
+        font-size: 0.8rem;
+    }
+    .gen-btn {
+        font-size: 0.85rem;
+    }
+    .reset-btn {
+        font-size: 0.85rem;
+    }
+    .pass-view {
+        width: 75vw;
+        font-size: 0.85rem;
+    }
+}
+
+@media(min-width: 768px) and (max-width: 1023px) {
+    h1 {
+        font-size: 1.7rem;
+    }
+    .container-title {
+        width: 55vw;
+        height: 50px;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+    h3 {
+        font-size: 1.1rem;
+    }
+    form {
+        width: 55vw;
+    }
+    .txt-inputs {
+        width: 45vw;
+    }
+    .txt-inputs::placeholder {
+        font-size: 0.82rem;
+    }
+    .gen-btn {
+        font-size: 0.88rem;
+    }
+    .reset-btn {
+        font-size: 0.88rem;
+    }
+    .pass-view {
+        width: 55vw;
+        font-size: 0.88rem;
+    }
+}
+
+@media(min-width: 1024px) and (max-width: 1439px) {
+    header {
+        margin-bottom: 10px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .container-title {
+        width: 50vw;
+        height: 50px;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+    h3 {
+        font-size: 1.1rem;
+    }
+    form {
+        width: 50vw;
+    }
+    .txt-inputs {
+        width: 40vw;
+        height: 40px;
+    }
+    .txt-inputs::placeholder {
+        font-size: 0.85rem;
+    }
+    .gen-btn {
+        font-size: 0.90rem;
+    }
+    .reset-btn {
+        font-size: 0.90rem;
+    }
+    .pass-view {
+        width: 50vw;
+        font-size: 0.90rem;
+    }
+}
